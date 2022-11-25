@@ -428,7 +428,7 @@ class ServicesBool implements \IteratorAggregate {
      * @return Traversable An instance of an object implementing <b>Iterator</b> or
      * <b>Traversable</b>
      */
-    public function getIterator()
+    public function getIterator(): Traversable
     {
         return new \ArrayIterator(array(
             'cod' => $this->getCod(),
