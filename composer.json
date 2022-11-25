@@ -12,7 +12,7 @@
     "require": {
         "php": ">=5.3.3",
         "doctrine/collections": "~1.2",
-        "jms/serializer": "~1.0",
+        "jms/serializer": "^3.18",
         "webit/soap-api": "^2.0.3"
     },
     "require-dev": {
