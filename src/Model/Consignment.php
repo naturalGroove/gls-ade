@@ -16,10 +16,11 @@ use JMS\Serializer\Annotation as JMS;
  * ponieważ zasadniczej zmianie ulega wykorzystanie elementów związanych z adresami (doręczenia, odbioru).
  * Uwagi na ten temat są podane w opisie tablicy ServicePPE.
  *
- * Sekcja z prefiksem r (od rname1 do rcontact) w przypadku usług PR, PS, EXC i SRS
+ * Sekcja z prefiksem r (od rrname1 do rcontact) w przypadku usług PR, PS, EXC i SRS
  * nie musi być wypełniana (odpowiednie dane zostaną pobrane z tablicy ServicePPE).
  */
-class Consignment {
+class Consignment
+{
 
     /**
      * Identyfikator przesyłki
@@ -38,7 +39,7 @@ class Consignment {
      *
      * @var string
      */
-    private $name1;
+    private $rname1;
 
     /**
      * Druga część nazwy odbiorcy (tzw. Nazwa 2)
@@ -50,7 +51,7 @@ class Consignment {
      *
      * @var string
      */
-    private $name2;
+    private $rname2;
 
     /**
      * Trzecia część nazwy odbiorcy (tzw. Nazwa 3)
@@ -62,7 +63,7 @@ class Consignment {
      *
      * @var string
      */
-    private $name3;
+    private $rname3;
 
     /**
      * Kod kraju odbiorcy (zgodny z ISO 3166-1 alfa-2)
@@ -74,7 +75,7 @@ class Consignment {
      *
      * @var string
      */
-    private $country;
+    private $rcountry;
 
     /**
      * Kod pocztowy odbiorcy
@@ -86,7 +87,7 @@ class Consignment {
      *
      * @var string
      */
-    private $zipCode;
+    private $rzipcode;
 
     /**
      * Nazwa miejscowości odbiorcy
@@ -98,7 +99,7 @@ class Consignment {
      *
      * @var string
      */
-    private $city;
+    private $rcity;
 
     /**
      * Ulica odbiorcy
@@ -110,7 +111,7 @@ class Consignment {
      *
      * @var string
      */
-    private $street;
+    private $rstreet;
 
     /**
      * Telefony do odbiorcy
@@ -122,7 +123,7 @@ class Consignment {
      *
      * @var string
      */
-    private $phone;
+    private $rphone;
 
     /**
      * Email, osoba kontaktowa odbiorcy
@@ -134,7 +135,7 @@ class Consignment {
      *
      * @var string
      */
-    private $contact;
+    private $rcontact;
 
     /**
      * Referencje (pole to jest drukowane na etykietach, zazwyczaj podaje się
@@ -221,7 +222,7 @@ class Consignment {
      *
      * @var SenderAddress
      */
-    private $senderAddress;
+    private $sendaddr;
 
     /**
      * Tablica z listą usług
@@ -233,7 +234,7 @@ class Consignment {
      *
      * @var ServicesBool
      */
-    private $servicesBool;
+    private $srv_bool;
 
     /**
      * Usługi zapisane w standardzie ADE. Zawartość elementu użyta na wejściu jest ignorowana.
@@ -245,7 +246,7 @@ class Consignment {
      *
      * @var string
      */
-    private $servicesAde;
+    private $srv_ade;
 
     /**
      * Tablica z danymi usługi DAW
@@ -258,7 +259,7 @@ class Consignment {
      *
      * @var ServiceDaw
      */
-    private $serviceDaw;
+    private $srv_daw;
 
     /**
      * Tablica z danymi usługi IDENT
@@ -271,7 +272,7 @@ class Consignment {
      *
      * @var ServiceIdent
      */
-    private $serviceIdent;
+    private $srv_ident;
 
     /**
      * Tablica z danymi usług PR, PS, EXC i SRS
@@ -283,7 +284,7 @@ class Consignment {
      *
      * @var ServicePpe
      */
-    private $servicePpe;
+    private $srv_ppe;
 
     /**
      * Tablica z paczkami. W przypadku zastosowania struktury na wejściu, usługi podane
@@ -324,49 +325,49 @@ class Consignment {
     /**
      * @return string
      */
-    public function getCity()
+    public function getRCity()
     {
-        return $this->city;
+        return $this->rcity;
     }
 
     /**
      * @param string $city
      */
-    public function setCity($city)
+    public function setRCity($rcity)
     {
-        $this->city = $city;
+        $this->rcity = $rcity;
     }
 
     /**
      * @return string
      */
-    public function getContact()
+    public function getRContact()
     {
-        return $this->contact;
+        return $this->rcontact;
     }
 
     /**
      * @param string $contact
      */
-    public function setContact($contact)
+    public function setRContact($rcontact)
     {
-        $this->contact = $contact;
+        $this->rcontact = $rcontact;
     }
 
     /**
      * @return string
      */
-    public function getCountry()
+    public function getRCountry()
     {
-        return $this->country;
+        return $this->rcountry;
     }
 
     /**
-     * @param string $country
+     * @param string $rcountry
      */
-    public function setCountry($country)
+    public function setRCountry($rcountry)
     {
-        $this->country = $country;
+        $this->rcountry = $rcountry;
     }
 
     /**
@@ -388,49 +389,49 @@ class Consignment {
     /**
      * @return string
      */
-    public function getName1()
+    public function getRName1()
     {
-        return $this->name1;
+        return $this->rname1;
     }
 
     /**
-     * @param string $name1
+     * @param string $rname1
      */
-    public function setName1($name1)
+    public function setRName1($rname1)
     {
-        $this->name1 = $name1;
-    }
-
-    /**
-     * @return string
-     */
-    public function getName2()
-    {
-        return $this->name2;
-    }
-
-    /**
-     * @param string $name2
-     */
-    public function setName2($name2)
-    {
-        $this->name2 = $name2;
+        $this->rname1 = $rname1;
     }
 
     /**
      * @return string
      */
-    public function getName3()
+    public function getRName2()
     {
-        return $this->name3;
+        return $this->rname2;
     }
 
     /**
-     * @param string $name3
+     * @param string $rname2
      */
-    public function setName3($name3)
+    public function setRName2($rname2)
     {
-        $this->name3 = $name3;
+        $this->rname2 = $rname2;
+    }
+
+    /**
+     * @return string
+     */
+    public function getRName3()
+    {
+        return $this->rname3;
+    }
+
+    /**
+     * @param string $rname3
+     */
+    public function setRName3($rname3)
+    {
+        $this->rname3 = $rname3;
     }
 
     /**
@@ -498,17 +499,17 @@ class Consignment {
     /**
      * @return string
      */
-    public function getPhone()
+    public function getRPhone()
     {
-        return $this->phone;
+        return $this->rphone;
     }
 
     /**
      * @param string $phone
      */
-    public function setPhone($phone)
+    public function setRPhone($rphone)
     {
-        $this->phone = $phone;
+        $this->rphone = $rphone;
     }
 
     /**
@@ -540,7 +541,7 @@ class Consignment {
      */
     public function getSenderAddress()
     {
-        return $this->senderAddress;
+        return $this->sendaddr;
     }
 
     /**
@@ -548,7 +549,7 @@ class Consignment {
      */
     public function setSenderAddress(SenderAddress $senderAddress = null)
     {
-        $this->senderAddress = $senderAddress;
+        $this->sendaddr = $senderAddress;
     }
 
     /**
@@ -556,7 +557,7 @@ class Consignment {
      */
     public function getServiceDaw()
     {
-        return $this->serviceDaw;
+        return $this->srv_daw;
     }
 
     /**
@@ -564,7 +565,7 @@ class Consignment {
      */
     public function setServiceDaw(ServiceDaw $serviceDaw = null)
     {
-        $this->serviceDaw = $serviceDaw;
+        $this->srv_daw = $serviceDaw;
     }
 
     /**
@@ -572,7 +573,7 @@ class Consignment {
      */
     public function getServiceIdent()
     {
-        return $this->serviceIdent;
+        return $this->srv_ident;
     }
 
     /**
@@ -580,7 +581,7 @@ class Consignment {
      */
     public function setServiceIdent(ServiceIdent $serviceIdent = null)
     {
-        $this->serviceIdent = $serviceIdent;
+        $this->srv_ident = $serviceIdent;
     }
 
     /**
@@ -588,7 +589,7 @@ class Consignment {
      */
     public function getServicePpe()
     {
-        return $this->servicePpe;
+        return $this->srv_ppe;
     }
 
     /**
@@ -596,7 +597,7 @@ class Consignment {
      */
     public function setServicePpe(ServicePpe $servicePpe = null)
     {
-        $this->servicePpe = $servicePpe;
+        $this->srv_ppe = $servicePpe;
     }
 
     /**
@@ -604,7 +605,7 @@ class Consignment {
      */
     public function getServicesAde()
     {
-        return $this->servicesAde;
+        return $this->srv_ade;
     }
 
     /**
@@ -612,7 +613,7 @@ class Consignment {
      */
     public function getServicesBool()
     {
-        return $this->servicesBool;
+        return $this->srv_bool;
     }
 
     /**
@@ -620,23 +621,23 @@ class Consignment {
      */
     public function setServicesBool(ServicesBool $servicesBool)
     {
-        $this->servicesBool = $servicesBool;
+        $this->srv_bool = $servicesBool;
     }
 
     /**
      * @return string
      */
-    public function getStreet()
+    public function getRStreet()
     {
-        return $this->street;
+        return $this->rstreet;
     }
 
     /**
      * @param string $street
      */
-    public function setStreet($street)
+    public function setRStreet($rstreet)
     {
-        $this->street = $street;
+        $this->rstreet = $rstreet;
     }
 
     /**
@@ -648,19 +649,27 @@ class Consignment {
     }
 
     /**
-     * @return string
+     * @param float $weight
      */
-    public function getZipCode()
+    public function setWeight($weight)
     {
-        return $this->zipCode;
+        $this->weight = (string)$weight;
     }
 
     /**
-     * @param string $zipCode
+     * @return string
      */
-    public function setZipCode($zipCode)
+    public function getRZipCode()
     {
-        $this->zipCode = $zipCode;
+        return $this->rzipcode;
+    }
+
+    /**
+     * @param string $rZipCode
+     */
+    public function setRZipCode($rzipcode)
+    {
+        $this->rzipcode = $rzipcode;
     }
 
     /**
@@ -676,4 +685,3 @@ class Consignment {
         $this->dispatched = (bool) $dispatched;
     }
 }
- 

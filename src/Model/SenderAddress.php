@@ -11,7 +11,8 @@ use JMS\Serializer\Annotation as JMS;
  *
  * Tablica zawiera dane adresowe nadawcy.
  */
-class SenderAddress {
+class SenderAddress
+{
 
     /**
      * Pierwsza część nazwy nadawcy
@@ -71,7 +72,7 @@ class SenderAddress {
      *
      * @var string
      */
-    private $zipCode;
+    private $zipcode;
 
     /**
      * Nazwa miejscowości nadawcy
@@ -198,7 +199,7 @@ class SenderAddress {
      */
     public function getZipCode()
     {
-        return $this->zipCode;
+        return $this->zipcode;
     }
 
     /**
@@ -206,9 +207,6 @@ class SenderAddress {
      */
     public function setZipCode($zipCode)
     {
-        $this->zipCode = $zipCode;
+        $this->zipcode = $zipCode;
     }
-
-
 }
- 

@@ -34,7 +34,7 @@ class ServicesBool implements \IteratorAggregate {
      * @JMS\SerializedName("cod_amount")
      * @JMS\Groups({"input"})
      *
-     * @var int
+     * @var float
      */
     private $codAmount;
 
@@ -198,7 +198,7 @@ class ServicesBool implements \IteratorAggregate {
     }
 
     /**
-     * @return int
+     * @return float
      */
     public function getCodAmount()
     {
@@ -206,7 +206,7 @@ class ServicesBool implements \IteratorAggregate {
     }
 
     /**
-     * @param int $codAmount
+     * @param float $codAmount
      */
     public function setCodAmount($codAmount)
     {
