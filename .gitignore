@@ -5,3 +5,4 @@ composer.lock
 phpspec.yml
 examples/config.php
 phpunit.xml
+.timetracker
