@@ -11,7 +11,8 @@ use JMS\Serializer\Annotation as JMS;
  *
  * Tablica zawiera dane pojedynczej paczki z przesyłki.
  */
-class Parcel {
+class Parcel
+{
 
     /**
      * Numer paczki. W przypadku użycia struktury na wejściu element number jest ignorowany.
@@ -21,9 +22,8 @@ class Parcel {
      * @JMS\SerializedName("number")
      * @JMS\Groups({"input"})
      *
-     * @var string
      */
-    private $number;
+    private string $number;
 
     /**
      * Referencje
@@ -33,9 +33,8 @@ class Parcel {
      * @JMS\SerializedName("reference")
      * @JMS\Groups({"input"})
      *
-     * @var string
      */
-    private $reference;
+    private string $reference;
 
     /**
      * Waga paczki [kg]. Waga pojedynczej paczki nie może być mniejsza od 0,01kg (10g).
@@ -45,9 +44,8 @@ class Parcel {
      * @JMS\SerializedName("weight")
      * @JMS\Groups({"input"})
      *
-     * @var string
      */
-    private $weight;
+    private string $weight;
 
     /**
      * Tablica z listą usług.
@@ -56,9 +54,8 @@ class Parcel {
      * @JMS\SerializedName("srv_bool")
      * @JMS\Groups({"input"})
      *
-     * @var ServicesBool
      */
-    private $servicesBool;
+    private ServicesBool $srv_bool;
 
     /**
      * Usługi zapisane w standardzie ADE. Zawartość elementu użyta na wejściu jest ignorowana.
@@ -70,7 +67,7 @@ class Parcel {
      *
      * @var string
      */
-    private $serviceAde;
+    private string $srv_ade;
 
     /**
      * @return string
@@ -101,7 +98,7 @@ class Parcel {
      */
     public function getServiceAde()
     {
-        return $this->serviceAde;
+        return $this->srv_ade;
     }
 
     /**
@@ -109,7 +106,7 @@ class Parcel {
      */
     public function getServicesBool()
     {
-        return $this->servicesBool;
+        return $this->srv_bool;
     }
 
     /**
@@ -117,7 +114,7 @@ class Parcel {
      */
     public function setServicesBool($servicesBool)
     {
-        $this->servicesBool = $servicesBool;
+        $this->srv_bool = $servicesBool;
     }
 
     /**

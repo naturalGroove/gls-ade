@@ -22,9 +22,8 @@ class SenderAddress
      * @JMS\SerializedName("name1")
      * @JMS\Groups({"input"})
      *
-     * @var string
      */
-    private $name1;
+    private string $name1;
 
     /**
      * Druga część nazwy nadawcy
@@ -34,9 +33,8 @@ class SenderAddress
      * @JMS\SerializedName("name2")
      * @JMS\Groups({"input"})
      *
-     * @var string
      */
-    private $name2;
+    private ?string $name2 = null;
 
     /**
      * Trzecia część nazwy nadawcy
@@ -46,9 +44,8 @@ class SenderAddress
      * @JMS\SerializedName("name3")
      * @JMS\Groups({"input"})
      *
-     * @var string
      */
-    private $name3;
+    private ?string $name3 = null;
 
     /**
      * Kod kraju nadawcy (zgodny z ISO 3166-1 alfa-2)
@@ -58,9 +55,8 @@ class SenderAddress
      * @JMS\SerializedName("country")
      * @JMS\Groups({"input"})
      *
-     * @var string
      */
-    private $country;
+    private string $country;
 
     /**
      * Kod pocztowy nadawcy
@@ -70,9 +66,8 @@ class SenderAddress
      * @JMS\SerializedName("zipcode")
      * @JMS\Groups({"input"})
      *
-     * @var string
      */
-    private $zipcode;
+    private string $zipcode;
 
     /**
      * Nazwa miejscowości nadawcy
@@ -82,9 +77,8 @@ class SenderAddress
      * @JMS\SerializedName("city")
      * @JMS\Groups({"input"})
      *
-     * @var string
      */
-    private $city;
+    private string $city;
 
     /**
      * Ulica nadawcy
@@ -94,9 +88,8 @@ class SenderAddress
      * @JMS\SerializedName("street")
      * @JMS\Groups({"input"})
      *
-     * @var string
      */
-    private $street;
+    private string $street;
 
     /**
      * @return string

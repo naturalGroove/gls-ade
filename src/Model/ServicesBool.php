@@ -14,7 +14,8 @@ use Traversable;
  * W przypadku użycia struktury na wejściu, nie ma koniecznośći nadawania wartości wszystkim elementom tablicy.
  * Opis użytych skrótów znajduje się w rozdziale Usługi zapisane w standardzie ADE.
  */
-class ServicesBool implements \IteratorAggregate {
+class ServicesBool implements \IteratorAggregate
+{
 
     /**
      * COD (Cash-Service) - Pobranie za towar
@@ -23,9 +24,8 @@ class ServicesBool implements \IteratorAggregate {
      * @JMS\SerializedName("cod")
      * @JMS\Groups({"input"})
      *
-     * @var int
      */
-    private $cod;
+    private ?int $cod = null;
 
     /**
      * Kwota COD
@@ -34,9 +34,8 @@ class ServicesBool implements \IteratorAggregate {
      * @JMS\SerializedName("cod_amount")
      * @JMS\Groups({"input"})
      *
-     * @var float
      */
-    private $codAmount;
+    private ?string $codAmount = null;
 
     /**
      * (ExWorks-Service) - Płaci odbiorca
@@ -45,9 +44,8 @@ class ServicesBool implements \IteratorAggregate {
      * @JMS\SerializedName("exw")
      * @JMS\Groups({"input"})
      *
-     * @var int
      */
-    private $exw;
+    private ?int $exw = null;
 
     /**
      * (DocumentReturn-Servic) - Zwrot dokumentów
@@ -56,9 +54,8 @@ class ServicesBool implements \IteratorAggregate {
      * @JMS\SerializedName("rod")
      * @JMS\Groups({"input"})
      *
-     * @var int
      */
-    private $rod;
+    private ?int $rod = null;
 
     /**
      * (ProofOfDelivery-Service) - Potwierdzenie dostawy)
@@ -67,9 +64,8 @@ class ServicesBool implements \IteratorAggregate {
      * @JMS\SerializedName("pod")
      * @JMS\Groups({"input"})
      *
-     * @var int
      */
-    private $pod;
+    private ?int $pod = null;
 
     /**
      * (Exchange-Service) - Wymiana towaru
@@ -78,9 +74,8 @@ class ServicesBool implements \IteratorAggregate {
      * @JMS\SerializedName("exc")
      * @JMS\Groups({"input"})
      *
-     * @var int
      */
-    private $exc;
+    private ?int $exc = null;
 
     /**
      * (Ident-Service) - Zwrot podpisanej umowy, po uprzedniej identyfikacji odbiorcy przez kuriera
@@ -89,9 +84,8 @@ class ServicesBool implements \IteratorAggregate {
      * @JMS\SerializedName("ident")
      * @JMS\Groups({"input"})
      *
-     * @var int
      */
-    private $ident;
+    private ?int $ident = null;
 
     /**
      * (DeliveryAtWork-Service) - Doręczenie paczki do rąk własnych odbiorcy lub zdefiniowanego miejsca w firmie
@@ -100,9 +94,8 @@ class ServicesBool implements \IteratorAggregate {
      * @JMS\SerializedName("daw")
      * @JMS\Groups({"input"})
      *
-     * @var int
      */
-    private $daw;
+    private ?int $daw = null;
 
     /**
      * (Pick&Ship-Service) - Odbiór paczki spod dowolnego adresu i dostarczenie jej do odbiorcy
@@ -111,9 +104,8 @@ class ServicesBool implements \IteratorAggregate {
      * @JMS\SerializedName("ps")
      * @JMS\Groups({"input"})
      *
-     * @var int
      */
-    private $ps;
+    private ?int $ps = null;
 
     /**
      * (Pick&Return-Service) - Odbiór paczki spod dowolnego adresu i dostarczenie jej do firmy/osoby zlecającej usługę
@@ -122,9 +114,8 @@ class ServicesBool implements \IteratorAggregate {
      * @JMS\SerializedName("pr")
      * @JMS\Groups({"input"})
      *
-     * @var int
      */
-    private $pr;
+    private ?int $pr = null;
 
     /**
      * (10:00-Service) - Dostawa do godziny 10:00
@@ -133,9 +124,8 @@ class ServicesBool implements \IteratorAggregate {
      * @JMS\SerializedName("s10")
      * @JMS\Groups({"input"})
      *
-     * @var int
      */
-    private $s10;
+    private ?int $s10 = null;
 
     /**
      * (12:00-Service) - Dostawa do godziny 12:00
@@ -144,9 +134,8 @@ class ServicesBool implements \IteratorAggregate {
      * @JMS\SerializedName("s12")
      * @JMS\Groups({"input"})
      *
-     * @var int
      */
-    private $s12;
+    private ?int $s12 = null;
 
     /**
      * (Saturday-Service) - Dostawa w sobotę
@@ -155,9 +144,8 @@ class ServicesBool implements \IteratorAggregate {
      * @JMS\SerializedName("sat")
      * @JMS\Groups({"input"})
      *
-     * @var int
      */
-    private $sat;
+    private ?int $sat = null;
 
     /**
      * (Odbiór własny) - Odbiór paczki w filii GLS Poland
@@ -166,9 +154,8 @@ class ServicesBool implements \IteratorAggregate {
      * @JMS\SerializedName("ow")
      * @JMS\Groups({"input"})
      *
-     * @var int
      */
-    private $ow;
+    private ?int $ow = null;
 
     /**
      * (ShopReturn-Service) - Zwrot paczki w dowolnym punkcie ParcelShop
@@ -177,9 +164,8 @@ class ServicesBool implements \IteratorAggregate {
      * @JMS\SerializedName("srs")
      * @JMS\Groups({"input"})
      *
-     * @var int
      */
-    private $srs;
+    private ?int $srs = null;
 
     /**
      * @return int

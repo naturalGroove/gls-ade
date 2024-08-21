@@ -25,9 +25,8 @@ class Consignment
     /**
      * Identyfikator przesyłki
      *
-     * @var int
      */
-    private $id;
+    private int $id;
 
     /**
      * Pierwsza część nazwy odbiorcy (tzw. Nazwa 1)
@@ -37,9 +36,8 @@ class Consignment
      * @JMS\SerializedName("rname1")
      * @JMS\Groups({"input"})
      *
-     * @var string
      */
-    private $rname1;
+    private string $rname1;
 
     /**
      * Druga część nazwy odbiorcy (tzw. Nazwa 2)
@@ -49,9 +47,8 @@ class Consignment
      * @JMS\SerializedName("rname2")
      * @JMS\Groups({"input"})
      *
-     * @var string
      */
-    private $rname2;
+    private ?string $rname2 = null;
 
     /**
      * Trzecia część nazwy odbiorcy (tzw. Nazwa 3)
@@ -61,9 +58,8 @@ class Consignment
      * @JMS\SerializedName("rname3")
      * @JMS\Groups({"input"})
      *
-     * @var string
      */
-    private $rname3;
+    private ?string $rname3 = null;
 
     /**
      * Kod kraju odbiorcy (zgodny z ISO 3166-1 alfa-2)
@@ -73,9 +69,8 @@ class Consignment
      * @JMS\SerializedName("rcountry")
      * @JMS\Groups({"input"})
      *
-     * @var string
      */
-    private $rcountry;
+    private string $rcountry;
 
     /**
      * Kod pocztowy odbiorcy
@@ -85,9 +80,8 @@ class Consignment
      * @JMS\SerializedName("rzipcode")
      * @JMS\Groups({"input"})
      *
-     * @var string
      */
-    private $rzipcode;
+    private string $rzipcode;
 
     /**
      * Nazwa miejscowości odbiorcy
@@ -97,9 +91,8 @@ class Consignment
      * @JMS\SerializedName("rcity")
      * @JMS\Groups({"input"})
      *
-     * @var string
      */
-    private $rcity;
+    private string $rcity;
 
     /**
      * Ulica odbiorcy
@@ -109,9 +102,8 @@ class Consignment
      * @JMS\SerializedName("rstreet")
      * @JMS\Groups({"input"})
      *
-     * @var string
      */
-    private $rstreet;
+    private string $rstreet;
 
     /**
      * Telefony do odbiorcy
@@ -121,9 +113,8 @@ class Consignment
      * @JMS\SerializedName("rphone")
      * @JMS\Groups({"input"})
      *
-     * @var string
      */
-    private $rphone;
+    private ?string $rphone = null;
 
     /**
      * Email, osoba kontaktowa odbiorcy
@@ -133,9 +124,8 @@ class Consignment
      * @JMS\SerializedName("rcontact")
      * @JMS\Groups({"input"})
      *
-     * @var string
      */
-    private $rcontact;
+    private ?string $rcontact = null;
 
     /**
      * Referencje (pole to jest drukowane na etykietach, zazwyczaj podaje się
@@ -146,9 +136,8 @@ class Consignment
      * @JMS\SerializedName("references")
      * @JMS\Groups({"input"})
      *
-     * @var string
      */
-    private $references;
+    private ?string $references = null;
 
     /**
      * Uwagi
@@ -158,9 +147,8 @@ class Consignment
      * @JMS\SerializedName("notes")
      * @JMS\Groups({"input"})
      *
-     * @var string
      */
-    private $notes;
+    private ?string $notes = null;
 
     /**
      * Ilość paczek w przesyłce, zawartość pola jest automatycznie korygowana
@@ -171,9 +159,8 @@ class Consignment
      * @JMS\SerializedName("quantity")
      * @JMS\Groups({"input"})
      *
-     * @var string
      */
-    private $quantity;
+    private ?int $quantity = null;
 
     /**
      * Waga wszystkich paczek w przesyłce [kg], zawartość pola jest automatycznie korygowana
@@ -184,9 +171,8 @@ class Consignment
      * @JMS\SerializedName("weight")
      * @JMS\Groups({"input"})
      *
-     * @var string
      */
-    private $weight;
+    private ?string $weight = null;
 
     /**
      * Data nadania, jeśli brak zostanie wstawiona aktualna data [YYYY-MM-DD]
@@ -195,10 +181,8 @@ class Consignment
      * @JMS\Type("DateTime<'Y-m-d'>")
      * @JMS\SerializedName("date")
      * @JMS\Groups({"input"})
-     *
-     * @var \DateTime
      */
-    private $date;
+    private ?string $date = null;
 
     /**
      * Identyfikator MPK (patrz opis metody adePfc_GetStatus)
@@ -210,7 +194,7 @@ class Consignment
      *
      * @var string
      */
-    private $pfc;
+    private ?string $pfc = null;
 
     /**
      * Adres nadawcy (patrz opis metody adeSendAddr_GetStatus)
@@ -220,9 +204,8 @@ class Consignment
      * @JMS\SerializedName("sendaddr")
      * @JMS\Groups({"input"})
      *
-     * @var SenderAddress
      */
-    private $sendaddr;
+    private ?SenderAddress $sendaddr = null;
 
     /**
      * Tablica z listą usług
@@ -232,9 +215,8 @@ class Consignment
      * @JMS\SerializedName("srv_bool")
      * @JMS\Groups({"input"})
      *
-     * @var ServicesBool
      */
-    private $srv_bool;
+    private ?ServicesBool $srv_bool = null;
 
     /**
      * Usługi zapisane w standardzie ADE. Zawartość elementu użyta na wejściu jest ignorowana.
@@ -244,9 +226,8 @@ class Consignment
      * @JMS\SerializedName("srv_ade")
      * @JMS\Groups({"input"})
      *
-     * @var string
      */
-    private $srv_ade;
+    private ?string $srv_ade = null;
 
     /**
      * Tablica z danymi usługi DAW
@@ -257,9 +238,8 @@ class Consignment
      * @JMS\SerializedName("srv_daw")
      * @JMS\Groups({"input"})
      *
-     * @var ServiceDaw
      */
-    private $srv_daw;
+    private ?ServiceDaw $srv_daw = null;
 
     /**
      * Tablica z danymi usługi IDENT
@@ -270,9 +250,8 @@ class Consignment
      * @JMS\SerializedName("srv_ident")
      * @JMS\Groups({"input"})
      *
-     * @var ServiceIdent
      */
-    private $srv_ident;
+    private ?ServiceIdent $srv_ident = null;
 
     /**
      * Tablica z danymi usług PR, PS, EXC i SRS
@@ -282,9 +261,8 @@ class Consignment
      * @JMS\SerializedName("srv_ppe")
      * @JMS\Groups({"input"})
      *
-     * @var ServicePpe
      */
-    private $srv_ppe;
+    private ?ServicePpe $srv_ppe = null;
 
     /**
      * Tablica z paczkami. W przypadku zastosowania struktury na wejściu, usługi podane
@@ -296,9 +274,8 @@ class Consignment
      * @JMS\SerializedName("parcels")
      * @JMS\Groups({"input"})
      *
-     * @var ArrayCollection
      */
-    private $parcels;
+    private ?ArrayCollection $parcels = null;
 
     /**
      * Flag, if consignment has been fetched from "Prepare" or "Pickup"
@@ -325,15 +302,15 @@ class Consignment
     /**
      * @return string
      */
-    public function getRCity()
+    public function getRcity()
     {
         return $this->rcity;
     }
 
     /**
-     * @param string $city
+     * @param string $rcity
      */
-    public function setRCity($rcity)
+    public function setRcity($rcity)
     {
         $this->rcity = $rcity;
     }
@@ -341,15 +318,15 @@ class Consignment
     /**
      * @return string
      */
-    public function getRContact()
+    public function getRcontact()
     {
         return $this->rcontact;
     }
 
     /**
-     * @param string $contact
+     * @param string $rcontact
      */
-    public function setRContact($rcontact)
+    public function setRcontact($rcontact)
     {
         $this->rcontact = $rcontact;
     }
@@ -357,7 +334,7 @@ class Consignment
     /**
      * @return string
      */
-    public function getRCountry()
+    public function getRcountry()
     {
         return $this->rcountry;
     }
@@ -365,7 +342,7 @@ class Consignment
     /**
      * @param string $rcountry
      */
-    public function setRCountry($rcountry)
+    public function setRcountry($rcountry)
     {
         $this->rcountry = $rcountry;
     }
@@ -389,7 +366,7 @@ class Consignment
     /**
      * @return string
      */
-    public function getRName1()
+    public function getRname1()
     {
         return $this->rname1;
     }
@@ -397,7 +374,7 @@ class Consignment
     /**
      * @param string $rname1
      */
-    public function setRName1($rname1)
+    public function setRname1($rname1)
     {
         $this->rname1 = $rname1;
     }
@@ -405,7 +382,7 @@ class Consignment
     /**
      * @return string
      */
-    public function getRName2()
+    public function getRname2()
     {
         return $this->rname2;
     }
@@ -413,7 +390,7 @@ class Consignment
     /**
      * @param string $rname2
      */
-    public function setRName2($rname2)
+    public function setRname2($rname2)
     {
         $this->rname2 = $rname2;
     }
@@ -421,7 +398,7 @@ class Consignment
     /**
      * @return string
      */
-    public function getRName3()
+    public function getRname3()
     {
         return $this->rname3;
     }
@@ -429,7 +406,7 @@ class Consignment
     /**
      * @param string $rname3
      */
-    public function setRName3($rname3)
+    public function setRname3($rname3)
     {
         $this->rname3 = $rname3;
     }
@@ -460,6 +437,11 @@ class Consignment
         }
 
         return $this->parcels;
+    }
+
+    public function setParcels(ArrayCollection $parcels)
+    {
+        $this->parcels = $parcels;
     }
 
     /**
@@ -499,15 +481,15 @@ class Consignment
     /**
      * @return string
      */
-    public function getRPhone()
+    public function getRphone()
     {
         return $this->rphone;
     }
 
     /**
-     * @param string $phone
+     * @param string $rphone
      */
-    public function setRPhone($rphone)
+    public function setRphone($rphone)
     {
         $this->rphone = $rphone;
     }
@@ -539,15 +521,15 @@ class Consignment
     /**
      * @return SenderAddress
      */
-    public function getSenderAddress()
+    public function getSendaddr()
     {
         return $this->sendaddr;
     }
 
     /**
-     * @param SenderAddress $senderAddress
+     * @param SenderAddress $sendaddr
      */
-    public function setSenderAddress(SenderAddress $senderAddress = null)
+    public function setSendaddr(SenderAddress $senderAddress = null)
     {
         $this->sendaddr = $senderAddress;
     }
@@ -555,7 +537,7 @@ class Consignment
     /**
      * @return ServiceDaw
      */
-    public function getServiceDaw()
+    public function getSrvDaw()
     {
         return $this->srv_daw;
     }
@@ -563,7 +545,7 @@ class Consignment
     /**
      * @param ServiceDaw $serviceDaw
      */
-    public function setServiceDaw(ServiceDaw $serviceDaw = null)
+    public function setSrvAde(ServiceDaw $serviceDaw = null)
     {
         $this->srv_daw = $serviceDaw;
     }
@@ -571,15 +553,15 @@ class Consignment
     /**
      * @return ServiceIdent
      */
-    public function getServiceIdent()
+    public function getSrvIdent()
     {
         return $this->srv_ident;
     }
 
     /**
-     * @param ServiceIdent $serviceIdent
+     * @param ServiceIdent $srv_ident
      */
-    public function setServiceIdent(ServiceIdent $serviceIdent = null)
+    public function setSrvIdent(ServiceIdent $serviceIdent = null)
     {
         $this->srv_ident = $serviceIdent;
     }
@@ -587,15 +569,15 @@ class Consignment
     /**
      * @return ServicePpe
      */
-    public function getServicePpe()
+    public function getSrvPpe()
     {
         return $this->srv_ppe;
     }
 
     /**
-     * @param ServicePpe $servicePpe
+     * @param ServicePpe $srv_ppe
      */
-    public function setServicePpe(ServicePpe $servicePpe = null)
+    public function setSrvPpe(ServicePpe $servicePpe = null)
     {
         $this->srv_ppe = $servicePpe;
     }
@@ -603,7 +585,7 @@ class Consignment
     /**
      * @return string
      */
-    public function getServicesAde()
+    public function getSrvAde()
     {
         return $this->srv_ade;
     }
@@ -611,7 +593,7 @@ class Consignment
     /**
      * @return ServicesBool
      */
-    public function getServicesBool()
+    public function getSrvBool()
     {
         return $this->srv_bool;
     }
@@ -619,7 +601,7 @@ class Consignment
     /**
      * @param ServicesBool $servicesBool
      */
-    public function setServicesBool(ServicesBool $servicesBool)
+    public function setSrvBool(ServicesBool $servicesBool)
     {
         $this->srv_bool = $servicesBool;
     }
@@ -627,15 +609,15 @@ class Consignment
     /**
      * @return string
      */
-    public function getRStreet()
+    public function getRstreet()
     {
         return $this->rstreet;
     }
 
     /**
-     * @param string $street
+     * @param string $rstreet
      */
-    public function setRStreet($rstreet)
+    public function setRstreet($rstreet)
     {
         $this->rstreet = $rstreet;
     }
@@ -659,15 +641,15 @@ class Consignment
     /**
      * @return string
      */
-    public function getRZipCode()
+    public function getRzipcode()
     {
         return $this->rzipcode;
     }
 
     /**
-     * @param string $rZipCode
+     * @param string $rzipcode
      */
-    public function setRZipCode($rzipcode)
+    public function setRzipcode($rzipcode)
     {
         $this->rzipcode = $rzipcode;
     }
