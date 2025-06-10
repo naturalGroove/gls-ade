@@ -23,7 +23,7 @@ class Parcel
      * @JMS\Groups({"input"})
      *
      */
-    private string $number;
+    private ?string $number = null;
 
     /**
      * Referencje
@@ -55,7 +55,7 @@ class Parcel
      * @JMS\Groups({"input"})
      *
      */
-    private ServicesBool $srv_bool;
+    private ?ServicesBool $srv_bool = null;
 
     /**
      * Usługi zapisane w standardzie ADE. Zawartość elementu użyta na wejściu jest ignorowana.
@@ -67,7 +67,7 @@ class Parcel
      *
      * @var string
      */
-    private string $srv_ade;
+    private ?string $srv_ade = null;
 
     /**
      * @return string
